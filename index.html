@@ -22,6 +22,14 @@
       img {
         position: absolute;
       }
+
+      body {
+        background-image: url("Elegant_Background-20.jpg")
+      }
+
+      .header {
+        color: white
+      }
     </style>
 
   </head>
@@ -42,8 +50,8 @@
       var theBody = document.getElementsByTagName("body")[0];
       function generateFaces() {
         for (var i = 0; i < numberOfFaces; i++) {
-          var randomNumberTop = Math.floor(Math.random() * (400 - 0 + 1))
-          var randomNumberLeft = Math.floor(Math.random() * (400 - 0 + 1))
+          var randomNumberTop = Math.floor(Math.random() * (400 - 20 + 1))
+          var randomNumberLeft = Math.floor(Math.random() * (400 - 20 + 1))
           console.log("this is top:" + randomNumberTop);
           console.log("this is left:" + randomNumberLeft);
           var smile = document.createElement("img")
