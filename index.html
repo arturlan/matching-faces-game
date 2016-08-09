@@ -5,7 +5,7 @@
     <title>faces game</title>
 
     <style media="screen">
-      div #leftSide {
+      div #rightSide {
         position: absolute;
         width: 500px;
         height: 500px;
@@ -13,14 +13,19 @@
         border-left: 1px solid black;
       }
 
-      div #rightSide {
+      div #leftSide {
         position: absolute;
         width: 500px;
         height: 500px;
       }
+
+      img {
+        position: absolute;
+      }
     </style>
+
   </head>
-  <body>
+  <body onload="generateFaces()" id="bd">
     <div class="header">
       <h2>Matching Game</h2>
       <p>
@@ -32,6 +37,23 @@
       <div id="rightSide"></div>
     </div>
 
+    <script type="text/javascript">
+      var numberOfFaces = 5
+      var theLeftSide = document.getElementById("leftSide")
 
+      function generateFaces() {
+        for (var i = 0; i < numberOfFaces; i++) {
+          var randomNumberTop = Math.floor(Math.random() * (350 - 100 + 1)) + 100;
+          var randomNumberLeft = Math.floor(Math.random() * (350 - 100 + 1)) + 100;
+          console.log("this is top:" + randomNumberTop);
+          console.log("this is left:" + randomNumberLeft);
+          var smile = document.createElement("img")
+          smile.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png"
+          smile.style.top = randomNumberTop + "px"
+          smile.style.left = randomNumberLeft + "px"
+          document.getElementById("leftSide").appendChild(smile);
+        }
+      }
+    </script>
   </body>
 </html>
